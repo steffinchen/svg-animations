@@ -1,3 +1,18 @@
 body {
-    font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
+
+  .button-bar {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      padding: 4px 8px;
+      background-color: cornflowerblue;
+      color: white;
+      font-size: 1.25rem;
+      border: 1px solid cornflowerblue;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
 }

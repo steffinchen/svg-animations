@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { BasicAnimations } from './basic-animations/basic-animations.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BasicAnimations, BasicAnimations, RouterLink],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

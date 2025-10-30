@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  height: 70vh;
+  width: 60vh;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

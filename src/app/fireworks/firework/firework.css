@@ -1,0 +1,35 @@
+@keyframes flingAway {
+  to {
+    transform: translate(
+      calc(cos(var(--angle)) * var(--distance)),
+      calc(sin(var(--angle)) * var(--distance))
+    );
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes floatDown {
+  to {
+    transform: translateY(20px);
+  }
+}
+
+.particle-wrapper {
+  animation: flingAway 1s ease-out forwards;
+  position: absolute;
+}
+
+.particle {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation:
+    floatDown 500ms ease-out 1s,
+    fadeOut 500ms ease-out 800ms forwards;
+  background-color: var(--color);
+}
