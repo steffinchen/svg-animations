@@ -1,11 +1,9 @@
 import { Component, signal, ViewChild } from '@angular/core';
-import {NgClass} from "@angular/common";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-basic-animations',
-    imports: [
-        NgClass
-    ],
+  imports: [NgClass],
   templateUrl: './basic-animations.component.html',
   styleUrl: './basic-animations.component.css',
 })
