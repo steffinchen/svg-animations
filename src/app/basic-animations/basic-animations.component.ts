@@ -2,14 +2,14 @@ import { Component, signal, ViewChild } from '@angular/core';
 import {NgClass} from "@angular/common";
 
 @Component({
-  selector: 'app-self-drawing',
+  selector: 'app-basic-animations',
     imports: [
         NgClass
     ],
-  templateUrl: './self-drawing.html',
-  styleUrl: './self-drawing.css',
+  templateUrl: './basic-animations.component.html',
+  styleUrl: './basic-animations.component.css',
 })
-export class SelfDrawing {
+export class BasicAnimations {
   isVisible = signal(true);
   doCasinoLights = signal(false);
 

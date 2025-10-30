@@ -1,13 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SelfDrawing } from './self-drawing/self-drawing';
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { BasicAnimations } from './basic-animations/basic-animations.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SelfDrawing],
+  imports: [RouterOutlet, BasicAnimations, BasicAnimations, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('svg-animations');
-}
+export class App {}
