@@ -12,6 +12,15 @@ svg {
   border: 1px solid black;
 }
 
+@keyframes casinoLights {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 2;
+  }
+}
+
 polygon {
   stroke: turquoise;
   fill: none;
@@ -26,9 +35,18 @@ polygon {
   &.visible {
     stroke-dashoffset: 0;
   }
+
+  &.casino-lights {
+    stroke-dasharray: 0, 2;
+    stroke-dashoffset: 0;
+    animation: casinoLights 800ms linear infinite;
+  }
 }
 
 .button-bar {
+  display: flex;
+  gap: 1rem;
+
   button {
     padding: 4px 8px;
     background-color: cornflowerblue;
