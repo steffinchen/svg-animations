@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="canvas">
+    <svg width="280" height="320" viewBox="0 0 280 320" class="">
+      <defs>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path
+            d="
+              M 20 0 L 20 20
+              M 0 20 L 20 20
+            "
+            fill="none"
+            stroke="hsl(0 0% 80%)"
+            stroke-width="0.5"
+          ></path>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" fill-opacity="0.5"></rect>
+      <polygon
+        pathLength="100"
+        [class]="isVisible() ? 'visible' : ''"
+        points="140,55
+  163.5760664694511,127.55032835562085
+  239.8609342109911,127.55321559063051
+  178.1468768685986,172.39467164437914
+  201.71745149070966,244.94678440936949
+  140,200.11
+  78.28254850929034,244.94678440936949
+  101.85312313140139,172.39467164437914
+  40.13906578900887,127.55321559063054
+  116.4239335305489,127.55032835562086"
+      ></polygon>
+    </svg>
+  </div>
+  <div class="button-bar">
+    <button (click)="draw()">{{ isVisible() ? 'Erase' : 'Draw' }}</button>
+  </div>
+</div>

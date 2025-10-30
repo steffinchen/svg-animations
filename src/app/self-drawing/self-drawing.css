@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  margin: 8px;
+}
+
+svg {
+  border: 1px solid black;
+}
+
+polygon {
+  stroke: turquoise;
+  fill: none;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 100, 1000;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 3s;
+
+  &.visible {
+    stroke-dashoffset: 0;
+  }
+}
+
+.button-bar {
+  button {
+    padding: 4px 8px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 1.25rem;
+    border: 1px solid cornflowerblue;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
