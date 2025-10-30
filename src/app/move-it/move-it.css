@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  margin: 8px;
+
+  &:focus-visible {
+    outline: none;
+    svg {
+      border: 2px solid darkturquoise;
+    }
+  }
+}
+
+svg {
+  border: 1px solid black;
+}
+
+.main {
+  fill: color-mix(in srgb, var(--color1), var(--color2));
+  stroke: none;
+
+  transition:
+    cy 100ms linear,
+    cx 100ms linear;
+}
+
+.particle {
+  stroke: none;
+}

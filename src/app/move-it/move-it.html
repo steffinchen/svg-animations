@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="canvas" (keydown)="keydown($event)" tabindex="0">
+    <svg [attr.height]="height" [attr.width]="width">
+      <defs>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path
+            d="
+              M 20 0 L 20 20
+              M 0 20 L 20 20
+            "
+            fill="none"
+            stroke="hsl(0 0% 80%)"
+            stroke-width="0.5"
+          ></path>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" fill-opacity="0.5"></rect>
+      <circle
+        [attr.r]="r()"
+        [attr.cx]="cx()"
+        [attr.cy]="cy()"
+        class="main"
+        [style]="'--color1: ' + color1() + '; --color2: ' + color2()"
+      ></circle>
+      @for (particle of particles(); track particle) {
+        <circle
+          r="5"
+          [attr.cx]="particle.x"
+          [attr.cy]="particle.y"
+          [attr.fill]="particle.color"
+          class="particle"
+        ></circle>
+      }
+    </svg>
+  </div>
+  <div class="button-bar">
+    <!--    <button (click)="toggleCasinoLights()">Casino Lights</button>-->
+    <!--    <button (click)="draw()">{{ isVisible() ? 'Erase' : 'Draw' }}</button>-->
+  </div>
+</div>
