@@ -1,0 +1,20 @@
+<div class="container">
+  <svg height="480" width="480" viewBox="0 0 480 480">
+    @for (el of mandala; track el) {
+      @if (el.type == 'ellipse') {
+        <g transform="translate(240,240)">
+          @for (i of noOfSegments; track i) {
+            <ellipse
+              [attr.transform]="'rotate(' + i * segmentAngle + ')'"
+              cx="0"
+              [attr.cy]="-1 * el.distance"
+              [attr.rx]="el.rx"
+              [attr.ry]="el.ry"
+            ></ellipse>
+          }
+        </g>
+      }
+    }
+    <circle cx="240" cy="240" r="15"></circle>
+  </svg>
+</div>

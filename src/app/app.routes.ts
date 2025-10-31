@@ -6,7 +6,12 @@ import { Flower } from './flower/flower';
 
 export const routes: Routes = [
   { path: 'fireworks', component: Fireworks },
-  { path: 'move-it', component: MoveIt },
-  { path: 'flower', component: Flower },
+  { path: 'move-it', loadComponent: () => import('./move-it/move-it').then((m) => m.MoveIt) },
+  { path: 'flower', loadComponent: () => import('./flower/flower').then((m) => m.Flower) },
+  {
+    path: 'mandala-generator',
+    loadComponent: () =>
+      import('./manadala-generator/manadala-generator').then((m) => m.ManadalaGenerator),
+  },
   { path: '', component: BasicAnimations },
 ];
