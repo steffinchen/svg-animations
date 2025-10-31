@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="canvas" id="canvas">
+    <svg width="800" height="400" viewBox="0 0 800 400">
+      <defs>
+        <linearGradient id="blue-green" gradientTransform="rotate(90)">
+          <stop offset="0%" style="stop-color: rgba(237, 221, 83, 1); stop-opacity: 1" />
+          <stop offset="40%" style="stop-color: rgba(87, 199, 133, 1); stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: rgba(42, 123, 155, 1); stop-opacity: 1" />
+        </linearGradient>
+      </defs>
+      <path
+        #path
+        id="path"
+        class="path"
+        d="M69.378,21.862 C125.454,48.672 247.314,299.77 299.685,297.758 449.068,291.943 488.256,113.751 451.203,71.108 430.53,47.307 354.312,55.845 318.877,102.107 300.711,125.765 270.644,184.412 286.656,201.323 316.055,232.359 375.922,222.742 547.498,193.361 619.897,180.912 601.207,143.912 651.351,136.712 "
+      />
+      <polygon points="60,0 120,120 0,120" fill="url(#blue-green)" class="triangle" #triangle />
+    </svg>
+
+    <div class="box" id="box"></div>
+  </div>
+  <div class="button-bar">
+    <button (click)="triggerAnimation()">Start</button>
+    <button (click)="editPath()">Edit Path</button>
+  </div>
+</div>
