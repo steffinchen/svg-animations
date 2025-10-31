@@ -1,5 +1,7 @@
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
   align-items: center;
   justify-content: center;
 }
@@ -26,5 +28,9 @@ svg {
 
   .t {
     fill: green;
+  }
+
+  .bird1 {
+    visibility: hidden;
   }
 }
