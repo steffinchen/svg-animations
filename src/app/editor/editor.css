@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  margin: 8px;
+  height: 80vh;
+}
+
+.canvas {
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+
+  .tag {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    cursor: pointer;
+  }
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+    width: 400px;
+    margin-bottom: 8px;
+  }
+
+  .keyframes {
+    flex-grow: 3;
+  }
+
+  .css {
+    flex-grow: 1;
+  }
+}
+svg {
+  border: 1px solid black;
+}
+
+.heart {
+  /*animation: wiggle 1s infinite ease-in-out;*/
+}

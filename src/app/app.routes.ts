@@ -13,5 +13,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./manadala-generator/manadala-generator').then((m) => m.ManadalaGenerator),
   },
+  { path: 'editor', loadComponent: () => import('./editor/editor').then((m) => m.Editor) },
   { path: '', component: BasicAnimations },
 ];
