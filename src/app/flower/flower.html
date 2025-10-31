@@ -1,0 +1,90 @@
+<div class="container">
+  <svg height="360" width="240" viewBox="0 0 240 360">
+    <path
+      stroke="green"
+      fill="transparent"
+      stroke-width="6"
+      d="
+      M 120,120
+      Q 140,240
+       100,360
+    "
+    />
+    <g transform="translate(120,120)">
+      <g [class]="isRotating() ? 'rotating' : ''">
+        @for (petal of petals; track petal; let i = $index) {
+          <g [attr.transform]="'rotate(' + i * petalSegment + ')'" class="petal">
+            <ellipse
+              cx="0"
+              cy="-60"
+              rx="15"
+              ry="30"
+              [attr.fill]="petal.color"
+              [attr.stroke]="petal.strokeColor"
+              stroke-width="1"
+            ></ellipse>
+          </g>
+        }
+
+        @for (petal of petals; track petal; let i = $index) {
+          <g
+            [attr.transform]="'rotate(' + (i * petalSegment + petalSegment / 2) + ')'"
+            class="petal inner"
+            (click)="petalClicked(i)"
+          >
+            <ellipse
+              cx="0"
+              cy="-60"
+              rx="20"
+              ry="40"
+              [class.highlighted]="isHighlighted(i)"
+            ></ellipse>
+          </g>
+        }
+        <circle
+          (click)="toggleHeart()"
+          cx="0"
+          cy="0"
+          r="30"
+          fill="yellow"
+          stroke="orange"
+          stroke-width="2"
+        ></circle>
+      </g>
+    </g>
+
+    <!--    <g transform="translate(180,280)" class="bee">-->
+    <!--      <ellipse rx="30" ry="20" fill="gold"></ellipse>-->
+    <!--    </g>-->
+
+    @if (showHeart()) {
+      <g transform="translate(120,110)" (click)="togglePulse()">
+        <path
+          [class]="'heart' + (pulseHeart() ? ' pulse' : '')"
+          d="
+        M 0,0
+        C 5, -15 
+        25, -15
+        30,0
+        C 35,15
+        15,25
+        0,40
+        C -15,25
+        -35,15
+        -30,0
+        C -25,-15
+        -5,-15
+        0,0
+      "
+          fill="red"
+          stroke="darkred"
+          stroke-width="2"
+        ></path>
+      </g>
+    }
+  </svg>
+
+  <div class="button-bar">
+    <button (click)="rotate()">{{ isRotating() ? 'Stop' : 'Start' }}</button>
+  </div>
+</div>
