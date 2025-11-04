@@ -25,10 +25,19 @@ export class Fireworks {
     color: '#EC1B4B',
   }));
 
+  directionalGreen = Array.from({ length: 150 }).map(() => ({
+    angle: random(-40, 0),
+    distance: random(50, 250),
+    color: '#2E9598',
+  }));
+
   launchFirework() {
     this.firework.set(this.colorful);
     setTimeout(() => {
       this.firework.set(this.smallRed);
-    }, 1000);
+      setTimeout(() => {
+        this.firework.set(this.directionalGreen);
+      }, 800);
+    }, 800);
   }
 }

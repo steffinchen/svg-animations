@@ -1,19 +1,23 @@
 <div class="container">
-  <svg height="480" width="480" viewBox="0 0 480 480">
-    @for (el of mandala; track el) {
-      @if (el.type == 'ellipse') {
-        <g transform="translate(240,240)">
-          @for (i of noOfSegments; track i) {
-            <ellipse
-              [attr.transform]="'rotate(' + i * segmentAngle + ')'"
-              cx="0"
-              [attr.cy]="-1 * el.distance"
-              [attr.rx]="el.rx"
-              [attr.ry]="el.ry"
-            ></ellipse>
-          }
-        </g>
-      }
+  <svg
+    #svg
+    height="480"
+    width="480"
+    viewBox="0 0 480 480"
+    (mousedown)="mouseDown($event)"
+    (mouseup)="mouseUp($event)"
+    (mousemove)="mouseMove($event)"
+    (click)="getCoordinates($event)"
+  >
+    @for (i of segmentsArray; track i) {
+      <line
+        x1="240"
+        y1="240"
+        [attr.x2]="240 + 240 * Math.cos((i * segmentAngle * Math.PI) / 180)"
+        [attr.y2]="240 + 240 * Math.sin((i * segmentAngle * Math.PI) / 180)"
+        stroke="hsl(0 0% 80%)"
+        stroke-width="0.5"
+      ></line>
     }
     <circle cx="240" cy="240" r="15"></circle>
   </svg>

@@ -30,7 +30,7 @@ polygon {
 
   stroke-dasharray: 100, 1000;
   stroke-dashoffset: 100;
-  transition: stroke-dashoffset 3s;
+  transition: stroke-dashoffset 3s ease-in-out;
 
   &.visible {
     stroke-dashoffset: 0;
